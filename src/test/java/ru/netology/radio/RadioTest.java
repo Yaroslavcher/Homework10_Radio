@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
-    Radio station = new Radio(10);
+    Radio station = new Radio();
 
     //    int setStation = station.setCurrentStation();
     /*    @ParameterizedTest*/

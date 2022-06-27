@@ -4,11 +4,11 @@ public class Radio {
     private int numOfStations = 10;
     private int currentStation;
 
-    public Radio(int numOfStations) {           //Конструктор принимает желаемое количество станций
+    public Radio(int numOfStations) {       //Конструктор принимает желаемое количество станций
         this.numOfStations = numOfStations;
     }
 
-    public Radio() {
+    public Radio() {                        //Этот конструктор используется, если пользователь не изменит значение numOfStations
     }
 
     int maxStation = numOfStations - 1;
@@ -16,10 +16,6 @@ public class Radio {
     public int getCurrentStation() {
         return currentStation;
     }
-    //public int getNumOfStations() {
-    //    return numOfStations;
-    //}
-
     public void setCurrentStation(int newCurrentStation) {  //сеттер текущей станции
         if (newCurrentStation < 0) {
             return;
@@ -48,7 +44,7 @@ public class Radio {
 
     private int currentVolume;
 
-    public void setCurrentVolume(int newVolume) {
+    public void setCurrentVolume(int newVolume) {   //Сеттер текущей громкости
         currentVolume = newVolume;
     }
 
