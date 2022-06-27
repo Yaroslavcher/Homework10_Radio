@@ -1,22 +1,35 @@
 package ru.netology.radio;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+/*@NoArgsConstructor
+@AllArgsConstructor
+@Data*/
+
 public class Radio {
     private int numOfStations = 10;
     private int currentStation;
+    private int currentVolume;
+    int maxStation = numOfStations - 1;
 
-    public Radio(int numOfStations) {       //Конструктор принимает желаемое количество станций
+    public Radio() {
+    }
+
+    public Radio(int numOfStations) {
         this.numOfStations = numOfStations;
     }
 
-    public Radio() {                        //Этот конструктор используется, если пользователь не изменит значение numOfStations
-    }
-
-    int maxStation = numOfStations - 1;
-
     public int getCurrentStation() {
-        return currentStation;
+        return this.currentStation;
     }
-    public void setCurrentStation(int newCurrentStation) {  //сеттер текущей станции
+
+    public int getCurrentVolume() {
+        return this.currentVolume;
+    }
+
+    public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
             return;
         }
@@ -24,6 +37,10 @@ public class Radio {
             return;
         }
         this.currentStation = newCurrentStation;
+    }
+
+    public void setCurrentVolume(int newVolume) {
+        this.currentVolume = newVolume;
     }
 
     public void next() {
@@ -40,16 +57,6 @@ public class Radio {
         } else {
             currentStation--;
         }
-    }
-
-    private int currentVolume;
-
-    public void setCurrentVolume(int newVolume) {   //Сеттер текущей громкости
-        currentVolume = newVolume;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void volumeUp() {

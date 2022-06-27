@@ -1,53 +1,33 @@
 package ru.netology.radio;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
     Radio station = new Radio();
 
-    //    int setStation = station.setCurrentStation();
-    /*    @ParameterizedTest*/
-/*    @CsvSource({
-        "-1",0
-        "0",0
-        "1",1
-        "8",8
-        "9",9
-        "10",0
-    })*/
-    /*    @CsvFileSource(files="src/test/resources/setStation.csv")*/
     @Test
     public void shouldNotSetStationBelowMin() {
         station.setCurrentStation(-1);
-
         assertEquals(0, station.getCurrentStation());
     }
 
     @Test
     public void shouldSetStationIfMin() {
         station.setCurrentStation(0);
-
         assertEquals(0, station.getCurrentStation());
     }
 
     @Test
     public void shouldSetStationIfMinPlusOne() {
         station.setCurrentStation(1);
-
         assertEquals(1, station.getCurrentStation());
     }
 
     @Test
     public void shouldSetStationIfMaxMinusOne() {
         station.setCurrentStation(8);
-
         assertEquals(8, station.getCurrentStation());
     }
 
