@@ -1,7 +1,7 @@
 package ru.netology.radio;
 
 public class Radio {
-    private int numOfStations = 10;
+    private int numOfStations = 20;
     private int currentStation;
 
     public Radio(int numOfStations) {       //Конструктор принимает желаемое количество станций
@@ -14,8 +14,10 @@ public class Radio {
     int maxStation = numOfStations - 1;
 
     public int getCurrentStation() {
+
         return currentStation;
     }
+
     public void setCurrentStation(int newCurrentStation) {  //сеттер текущей станции
         if (newCurrentStation < 0) {
             return;

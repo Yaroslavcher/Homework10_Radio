@@ -13,17 +13,24 @@ public class RadioTest {
     Radio station = new Radio();
 
     //    int setStation = station.setCurrentStation();
-    /*    @ParameterizedTest*/
-/*    @CsvSource({
-        "-1",0
-        "0",0
-        "1",1
-        "8",8
-        "9",9
-        "10",0
-    })*/
+    @ParameterizedTest
+    @CsvSource({
+            "-1,0",
+            "0,0",
+            "1,1",
+            "15,15",
+            "18,18",
+            "19,19",
+            "20,0"
+    })
     /*    @CsvFileSource(files="src/test/resources/setStation.csv")*/
-    @Test
+    /*@Test*/
+    public void shouldSetStation(int newCurrentStation, int expected) {
+        station.setCurrentStation(newCurrentStation);
+
+        assertEquals(expected, station.getCurrentStation());
+    }
+ /*   @Test
     public void shouldNotSetStationBelowMin() {
         station.setCurrentStation(-1);
 
@@ -62,12 +69,12 @@ public class RadioTest {
     public void shouldSetStationIfOverMax() {
         station.setCurrentStation(10);
 
-        assertEquals(0, station.getCurrentStation());
-    }
+        assertEquals(10, station.getCurrentStation());
+    }*/
 
     @Test
     public void shouldNextIfMax() {
-        station.setCurrentStation(9);
+        station.setCurrentStation(19);
 
         station.next();
 
@@ -89,7 +96,7 @@ public class RadioTest {
 
         station.prev();
 
-        assertEquals(9, station.getCurrentStation());
+        assertEquals(19, station.getCurrentStation());
     }
 
     @Test
