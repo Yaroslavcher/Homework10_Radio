@@ -10,10 +10,10 @@ public class RadioTest {
 
     Radio station = new Radio(20);
 
-    @BeforeEach
+/*    @BeforeEach
     public void b4EachTest() {
         station.setMaxStation(20);
-    }
+    }*/
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/setStation.csv")
